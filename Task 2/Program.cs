@@ -1,8 +1,6 @@
 ﻿Console.WriteLine("Введите 2 целых числа: ");
 int number1;
 int number2;
-
-
 int.TryParse(Console.ReadLine(), out number1);
 int.TryParse(Console.ReadLine(), out number2);
 
