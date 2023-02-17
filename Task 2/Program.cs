@@ -1,9 +1,12 @@
 ﻿Console.WriteLine("Введите 2 целых числа: ");
 string a = Console.ReadLine();
 string b = Console.ReadLine();
+int number1;
+int number2;
 
-int number1 = int.Parse(a);
-int number2 = int.Parse(b);
+
+int.TryParse(a, out number1);
+int.TryParse(b, out number2);
 
 if (number1 > number2)
 {
