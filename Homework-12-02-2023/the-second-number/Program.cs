@@ -1,11 +1,29 @@
 ﻿
-// Напишите программу, которая принимает на вход трехзначное число и на выходе показывает **вторую** цифру этого числа.
+ShowSecondNumber();
 
-int number;
+int InputNumber()
+{
+    int number;
+    Console.Write("Введите трехзначное число: ");
+    string text = Console.ReadLine();
+    int.TryParse(text, out number);
+    if (number > 100 && number < 999)
+        return number;
+    else
+    {
+        Console.WriteLine("Вы ввели не трехзначное число");
+        return InputNumber();
+    }
+}
 
-number = new Random().Next(100, 1000);
 
-int a = number % 100;
-int b = a / 10;
+void ShowSecondNumber()
+{
+    string text = InputNumber().ToString();
+    Console.WriteLine($"{text} -> {text[1]}");
+}
 
-Console.WriteLine($"{number} -> {b}");
+// int a = number % 100;
+// int b = a / 10;
+
+// Console.WriteLine($"{number} -> {b}");
