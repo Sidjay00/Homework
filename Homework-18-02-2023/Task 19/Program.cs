@@ -7,71 +7,38 @@
 23432 -> да */
 
 
-string ConsoleTakeInt()
+// int number;
+// Console.Write("Введите пятизначное число: ");
+// int.TryParse(Console.ReadLine(), out number);
+
+string ConsoleTakeString()
 {
 	int number;
-	Console.Write($"Введите пятизначное число: ");
+	Console.Write($"Введите число: ");
 	bool flag = int.TryParse(Console.ReadLine(), out number);
-	if (flag = false)
-    	{
-            return number;
-            Console.Write($"{number}");
-        }
+	if (flag)
+    {
+    	string text = number.ToString();
+		int i = 5; // данная переменная задана для проверки количества знаков в числе. т.к. по условию задачи число должно быть 5-значным, поэтому здесь стоит 5.
+		int length = text.Length;
+		if (i == length)
+		{
+		    Console.Write("Всё хорошо!");
+		}
+		else
+		{
+		    Console.WriteLine("Введено не пятизначное число!!");
+		    ConsoleTakeString();
+		}
+			return text;
+    }    
 	else
 	{
-    	string text = number.ToString();
-        int i = 4;
-        if (i = text.Length)
-        {
-            return text;
-        }
-        else
-    	{
-            return ConsoleTakeInt();
-        }
-	}
+    	Console.Write($"Введено не число\n");
+    	return ConsoleTakeString();
+    }
 }
 
 
-// Console.Write("Введите пятизначное число: ");
-// bool flag = int.TryParse(Console.ReadLine(), out number);
-// 	if (flag = false)
-//     	return Console.Write($"YtdthyВведено пятизначное число: ");
-// 	else
-// 	{
-    	
-//     	return ConsoleTakeInt();
-// 	}
 
-
-/* void PrintArray(int[] array)
-{
-	int count = array.Length;
-	for (int i = 0; i < count; i++)
-	{
-    	Console.Write($"{array[i]} ");
-	}
-	Console.WriteLine();
-} */
-
-// text = number.ToString();
-// Console.WriteLine(number is String); 
-
-// void TurnOver(int array)
-// {
-// 	for( int i = 0; i < array.Length; i++)
-// 	{
-//     	int minPosition = i;
-//     	for (int j = i + 1; j < array.Length; j++)
-//     	{
-//         	if (array[j] < array[minPosition]) minPosition = j;
-//     	}
-//     	int temporary = array[i];
-//     	array[i] = array[minPosition];
-//     	array[minPosition] = temporary;
-// 	}
-// }
-
-// PrintArray(arr);
-// Sort(arr);
-// PrintArray(arr);
+Console.WriteLine(ConsoleTakeString());
