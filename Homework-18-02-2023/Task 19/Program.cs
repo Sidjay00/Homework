@@ -14,8 +14,8 @@
 string ConsoleTakeString()
 {
 	int number;
-	Console.Write($"Введите число: ");
-	bool flag = int.TryParse(Console.ReadLine(), out number);
+	System.Console.Write($"Введите число: ");
+	bool flag = int.TryParse(System.Console.ReadLine(), out number);
 	if (flag)
     {
     	string text = number.ToString();
@@ -27,17 +27,17 @@ string ConsoleTakeString()
 		}
 		else
 		{
-		    Console.WriteLine("Введено не пятизначное число!!");
+		    System.Console.WriteLine("Введено не пятизначное число!!");
 		    return ConsoleTakeString();
 		}			
     }    
 	else
 	{
-    	Console.Write($"Введено не число\n");
+    	System.Console.Write($"Введено не число\n");
     	return ConsoleTakeString();
     }
 }
 
 
-
-Console.WriteLine(text);
+string textOut = ConsoleTakeString();
+System.Console.WriteLine(textOut);
