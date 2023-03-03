@@ -23,14 +23,13 @@ string ConsoleTakeString()
 		int length = text.Length;
 		if (i == length)
 		{
-		    Console.Write("Всё хорошо!");
+		    return text;
 		}
 		else
 		{
 		    Console.WriteLine("Введено не пятизначное число!!");
-		    ConsoleTakeString();
-		}
-			return text;
+		    return ConsoleTakeString();
+		}			
     }    
 	else
 	{
@@ -41,4 +40,4 @@ string ConsoleTakeString()
 
 
 
-Console.WriteLine(ConsoleTakeString());
+Console.WriteLine(text);
