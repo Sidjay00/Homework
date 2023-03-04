@@ -13,31 +13,39 @@
 
 string ConsoleTakeString()
 {
-	int number;
-	System.Console.Write($"Введите число: ");
-	bool flag = int.TryParse(System.Console.ReadLine(), out number);
-	if (flag)
+    int number;
+    System.Console.Write($"Введите число: ");
+    bool flag = int.TryParse(System.Console.ReadLine(), out number);
+    if (flag)
     {
-    	string text = number.ToString();
-		int i = 5; // данная переменная задана для проверки количества знаков в числе. т.к. по условию задачи число должно быть 5-значным, поэтому здесь стоит 5.
-		int length = text.Length;
-		if (i == length)
-		{
-		    return text;
-		}
-		else
-		{
-		    System.Console.WriteLine("Введено не пятизначное число!!");
-		    return ConsoleTakeString();
-		}			
-    }    
-	else
-	{
-    	System.Console.Write($"Введено не число\n");
-    	return ConsoleTakeString();
+        string text = number.ToString();
+        int i = 5; // данная переменная задана для проверки количества знаков в числе. т.к. по условию задачи число должно быть 5-значным, поэтому здесь стоит 5.
+        int length = text.Length;
+        if (i == length)
+        {
+            return text;
+        }
+        else
+        {
+            System.Console.WriteLine("Введено не пятизначное число!!");
+            return ConsoleTakeString();
+        }
+    }
+    else
+    {
+        System.Console.Write($"Введено не число\n");
+        return ConsoleTakeString();
     }
 }
 
-
 string textOut = ConsoleTakeString();
-System.Console.WriteLine(textOut);
+
+if (textOut[0] == textOut[4] && textOut[1] == textOut[3])
+{
+	System.Console.WriteLine($"Число {textOut} - палиндром!");
+}
+else
+{
+	System.Console.WriteLine($"Число {textOut} - не является палиндромом!");
+
+}
