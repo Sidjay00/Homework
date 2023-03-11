@@ -14,12 +14,15 @@ int[] odds = new int[arr.Length / 2];
 int oddsItem = 0;
 for (int i = 1; i < arr.Length; i += 2)    // Условие задачи можно прочитать двояко, можно считать чётным каждый второй элемент массива, а также элементы массива согласно индексу. Для того, чтобы решить задачу для первого случая i должно быть равно 0, для второго - 1.
     {
-        System.Console.Write(oddsItem);
-        System.Console.Write(arr[i]);
         odds[oddsItem] = arr[i];
-        System.Console.WriteLine(odds[oddsItem]);
         oddsItem++;
     }
+
+int sum = 0;
+for (int i = 0; i < odds.Length; i++)
+{
+    sum += odds[i];
+}
 
 
 
@@ -27,6 +30,7 @@ for (int i = 1; i < arr.Length; i += 2)    // Условие задачи мож
 
 
 System.Console.WriteLine($"{String.Join(", ", odds)}");
+System.Console.WriteLine($"{sum}");
 
 
 int[] FillArray(int size, int min = 0, int max = 10)
