@@ -5,33 +5,33 @@
 [-4, -6, 89, 6] -> 0 */
 
 int[] arr = FillArray(12);
-// int[] array = OddItemsFromArray(arr);
-System.Console.WriteLine($"{String.Join(", ", arr)}");
+int[] array = OddItemsFromArray(arr);
+int sum = 0;
+
+for (int i = 0; i < array.Length; i++)
+{
+    sum += array[i];
+}
+
+System.Console.WriteLine($"[{String.Join(", ", arr)}] -> {sum}");
 
 
-// int[] OddItemsFromArray(int[] array)
-int[] odds = new int[arr.Length / 2];
-int oddsItem = 0;
-for (int i = 1; i < arr.Length; i += 2)    // Условие задачи можно прочитать двояко, можно считать чётным каждый второй элемент массива, а также элементы массива согласно индексу. Для того, чтобы решить задачу для первого случая i должно быть равно 0, для второго - 1.
+int[] OddItemsFromArray(int[] arr)
+{
+    int[] odds = new int[arr.Length / 2];
+    int oddsItem = 0;
+    for (int i = 1; i < arr.Length; i += 2)    // Условие задачи можно прочитать двояко, можно считать чётным каждый второй элемент массива, а также элементы массива согласно индексу. Для того, чтобы решить задачу для первого случая i должно быть равно 0, для второго - 1.
     {
         odds[oddsItem] = arr[i];
         oddsItem++;
     }
-
-int sum = 0;
-for (int i = 0; i < odds.Length; i++)
-{
-    sum += odds[i];
+    int sum = 0;
+    for (int i = 0; i < odds.Length; i++)
+    {
+        sum += odds[i];
+    }
+    return odds;
 }
-
-
-
-
-
-
-System.Console.WriteLine($"{String.Join(", ", odds)}");
-System.Console.WriteLine($"{sum}");
-
 
 int[] FillArray(int size, int min = 0, int max = 10)
 {
