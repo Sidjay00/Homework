@@ -8,9 +8,9 @@ int[] arr = FillArray(12);
 int[] array = OddItemsFromArray(arr);
 int sum = 0;
 
-for (int i = 0; i < array.Length; i++)
+foreach (int item in array)
 {
-    sum += array[i];
+    sum += item;
 }
 
 System.Console.WriteLine($"[{String.Join(", ", arr)}] -> {sum}");
@@ -24,11 +24,6 @@ int[] OddItemsFromArray(int[] arr)
     {
         odds[oddsItem] = arr[i];
         oddsItem++;
-    }
-    int sum = 0;
-    for (int i = 0; i < odds.Length; i++)
-    {
-        sum += odds[i];
     }
     return odds;
 }
