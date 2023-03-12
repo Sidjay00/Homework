@@ -7,21 +7,21 @@
 // [/home/sysadmin/Dev/GeekBrains/Homework/Homework-25-02-2023/Task_38/Task_38.csproj]
 // периодически возникает такая ошибка - это происходит из-за того, что я return ставлю внутри цикла for. NB!
 
-double[] arr = FillArray(4, -100, 100);
+double[] arr = FillArray(12, 0, 100);
 
 System.Console.WriteLine($"[{String.Join(", ", arr)}] -> {MaxMinDif(arr)}");
 
-double MaxMinDif(double[] arr)
+double MaxMinDif(double[] array)
 {
-    double min = arr[0];
-    double max = arr[0];
+    double min = array[0];
+    double max = array[0];
     double dif = 0;
 
-    for (int i = 1; i < arr.Length; i++)
+    for (int i = 1; i < array.Length; i++)
     {
         
-        if (min < arr[i]) min = arr[i];
-        if (max > arr[i]) max = arr[i];
+        if (array[i] < min) min = array[i];
+        if (array[i] > max) max = array[i];
     }
     
     System.Console.WriteLine($"{max}; {min}");
