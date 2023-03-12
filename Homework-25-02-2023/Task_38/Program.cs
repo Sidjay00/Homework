@@ -7,7 +7,7 @@
 // [/home/sysadmin/Dev/GeekBrains/Homework/Homework-25-02-2023/Task_38/Task_38.csproj]
 // периодически возникает такая ошибка - это происходит из-за того, что я return ставлю внутри цикла for. NB!
 
-double[] arr = FillArray(12, 0, 100);
+double[] arr = FillArray(12, 0, 1000);
 
 System.Console.WriteLine($"[{String.Join(", ", arr)}] -> {MaxMinDif(arr)}");
 
@@ -17,14 +17,19 @@ double MaxMinDif(double[] array)
     double max = array[0];
     double dif = 0;
 
-    for (int i = 1; i < array.Length; i++)
+    foreach (double item in arr)
     {
-        
-        if (array[i] < min) min = array[i];
-        if (array[i] > max) max = array[i];
+        if (item < min) min = item;
+        if (item > max) max = item;
     }
+    // for (int i = 1; i < array.Length; i++) - сначала решил задачу через for, затем заменил на foreach
+    // {
+        
+    //     if (array[i] < min) min = array[i];
+    //     if (array[i] > max) max = array[i];
+    // }
     
-    System.Console.WriteLine($"{max}; {min}");
+    // System.Console.WriteLine($"{max}; {min}"); - создал эту строку для проверки вычисления максимума и минимума
     dif = max - min;
     return dif;
 }
