@@ -19,8 +19,10 @@ double MaxMinDif(double[] array)
 
     foreach (double item in arr)
     {
-        if (item < min) min = item;
-        if (item > max) max = item;
+        // if (item < min) min = item; 
+        min = item < min ? item : min;  //заменил ифы на тернарный оператор
+        // if (item > max) max = item;
+        max = item > max ? item : max;
     }
     // for (int i = 1; i < array.Length; i++) - сначала решил задачу через for, затем заменил на foreach
     // {
@@ -29,7 +31,7 @@ double MaxMinDif(double[] array)
     //     if (array[i] > max) max = array[i];
     // }
     
-    // System.Console.WriteLine($"{max}; {min}"); - создал эту строку для проверки вычисления максимума и минимума
+    // System.Console.WriteLine($"{max}; {min}"); // создал эту строку для проверки вычисления максимума и минимума
     dif = max - min;
     return dif;
 }
