@@ -1,2 +1,22 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/* **Задача 50:** Напишите программу, которая на вход принимает позиции элемента в двумерном массиве, и возвращает значение этого элемента или же указание, что такого элемента нет.
+
+Например, задан массив:
+
+1 4 7 2
+
+5 9 2 3
+
+8 4 2 4
+
+17 -> такого числа в массиве нет */
+
+ double[,] array = new double[3, 4];
+ for (int i = 0; i < array.GetLength(0); i++) //Строки
+ {
+    for (int j = 0; j < array.GetLength(1); j++) // Столбцы
+    {
+        array[i, j] = new Random().Next(-10, 10);
+        Console.Write($"{array[i, j]} ");
+    }
+    // Console.WriteLine(array.GetType());  // проверял, какие значения записаны в массив - целые или вещественные
+}
