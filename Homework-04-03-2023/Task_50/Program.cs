@@ -37,12 +37,12 @@ int[] ValueInput()
     return ElementPosition;
 }
 
-void PrintArray(Array arr) //Задаем функцию для печати массивов: одномерного, двухмерного и трехмерного. В скобочках обозначается, что на ввод берется массив Array <имя переменной>
+void PrintArray(Array arr) 
 {
-    switch (arr.Rank)   // Новый метод switch, не помню, когда нам его давали, но похоже он просто переключает внутри себя, когда определяет, по какому case надо работать. .Rank - определяет размер массива, как я понял.
+    switch (arr.Rank)
     {
         case 1:
-            for (int i = 0; i < arr.GetLength(0); i++) // Строка одномерного массива
+            for (int i = 0; i < arr.GetLength(0); i++) 
                 Console.Write($"{arr.GetValue(i)} ");
             break;
         case 2:
