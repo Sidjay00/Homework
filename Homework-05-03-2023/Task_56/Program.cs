@@ -23,7 +23,7 @@ int minPosition = 1;
 for (int i = 1; i < arr.GetLength(0); i++)
 {
     if (arr[i] < arr[i - 1])
-        minPosition = i+1;
+        minPosition = i + 1;
 }
 System.Console.WriteLine($"Строка №{minPosition} с наименьшей суммой элементов.");
 
