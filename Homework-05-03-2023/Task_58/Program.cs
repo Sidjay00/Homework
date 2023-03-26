@@ -43,43 +43,43 @@ PrintArray(ResultMatrix);
 
 
 
-    int[,] Fill2DArray()
-    {
-        int[,] arr = new int[3, 3];
-        for (int i = 0; i < arr.GetLength(0); i++)
-            for (int j = 0; j < arr.GetLength(1); j++)
-                arr[i, j] = new Random().Next(10);
-        return arr;
-    }
+int[,] Fill2DArray()
+{
+    int[,] arr = new int[3, 3];
+    for (int i = 0; i < arr.GetLength(0); i++)
+        for (int j = 0; j < arr.GetLength(1); j++)
+            arr[i, j] = new Random().Next(10);
+    return arr;
+}
 
-    void PrintArray(Array array)
+void PrintArray(Array array)
+{
+    for (int i = 0; i < array.GetLength(0); i++)
     {
-        for (int i = 0; i < array.GetLength(0); i++)
+        for (int j = 0; j < array.GetLength(1); j++)
         {
-            for (int j = 0; j < array.GetLength(1); j++)
-            {
-                System.Console.Write($"{array.GetValue(i, j)} ");
-            }
-            System.Console.WriteLine();
+            System.Console.Write($"{array.GetValue(i, j)} ");
+        }
+        System.Console.WriteLine();
+    }
+}
+
+static int[,] ReadMatrix(string message)
+{
+    System.Console.WriteLine(message);
+    System.Console.Write("Введите количество строк: ");
+    int rows = int.Parse(Console.ReadLine()!);
+    System.Console.Write("Введите количество столбцов: ");
+    int cols = int.Parse(Console.ReadLine()!);
+    int[,] matrix = new int[rows, cols];
+    System.Console.WriteLine("Введите элементы матрицы:");
+    for (int i = 0; i < rows; i++)
+    {
+        for (int j = 0; j < cols; j++)
+        {
+            Console.Write($"[{i}, {j}]: ");
+            matrix[i, j] = int.Parse(Console.ReadLine()!);
         }
     }
-
-    static int[,] ReadMatrix(string message)
-    {
-        System.Console.WriteLine(message);
-        System.Console.Write("Введите количество строк: ");
-        int rows = int.Parse(Console.ReadLine()!);
-        System.Console.Write("Введите количество столбцов: ");
-        int cols = int.Parse(Console.ReadLine()!);
-        int[,] matrix = new int[rows, cols];
-        System.Console.WriteLine("Введите элементы матрицы:");
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                Console.Write($"[{i}, {j}]: ");
-                matrix[i,j] = int.Parse(Console.ReadLine()!);
-            }
-        }
-        return matrix;
-    }
+    return matrix;
+}
