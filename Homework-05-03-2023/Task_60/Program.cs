@@ -6,3 +6,33 @@
 27(0,0,1) 90(0,1,1)
 26(1,0,1) 55(1,1,1) */
 
+// Создаем трехмерный массив размером 2x2x2
+        int[,,] array = new int[2, 2, 2];
+
+        // Заполняем массив неповторяющимися двузначными числами
+        int num = new Random().Next(10,100);
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                for (int k = 0; k < array.GetLength(2); k++)
+                {
+                    array[i, j, k] = num;
+                    num++;
+                }
+            }
+        }
+
+        // Выводим массив построчно с индексами каждого элемента
+        Console.WriteLine("Массив размером 2 x 2 x 2");
+        for (int i = 0; i < array.GetLength(0); i++)
+        {
+            for (int j = 0; j < array.GetLength(1); j++)
+            {
+                for (int k = 0; k < array.GetLength(2); k++)
+                {
+                    Console.Write($"{array[i, j, k]:00}({i},{j},{k}) ");
+                }
+                Console.WriteLine();
+            }
+        }
